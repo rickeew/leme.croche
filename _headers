@@ -1,0 +1,14 @@
+/images/*.png
+  Content-Type: image/png
+
+/images/*.jpg
+  Content-Type: image/jpeg
+
+/images/*.jpeg
+  Content-Type: image/jpeg
+
+/images/*.gif
+  Content-Type: image/gif
+
+/images/*.webp
+  Content-Type: image/webp
