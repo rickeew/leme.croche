@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leme Crochê - Bolsas Artesanais</title>
+    <meta name="description" content="Bolsas de crochê artesanais feitas com amor e cuidado. Modelos únicos e personalizados.">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading" class="loading">
+        <div class="spinner">
+            <i class="fas fa-heart"></i>
+        </div>
+        <p>Carregando...</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="Leme Crochê" class="logo-img">
+                    <span>Leme Crochê</span>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Bolsas Artesanais de Crochê</h1>
+            <p>Aqui você encontra nossos modelos já criados. Entre em contato para encomendas personalizadas!</p>
+            <div class="hero-buttons">
+                <a href="#produtos" class="btn btn-primary">Ver Modelos</a>
+                <a href="#contato" class="btn btn-secondary">Fazer Encomenda</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section id="produtos" class="produtos">
+        <div class="container">
+            <h2>Nossos Produtos</h2>
+            <p class="section-subtitle">Descubra nossa coleção de bolsas exclusivas</p>
+            
+            <!-- Filtros -->
+            <div class="filtros">
+                <button class="filtro-btn active" data-categoria="todos">Todos</button>
+                <button class="filtro-btn" data-categoria="pequenas">Bolsas Pequenas</button>
+                <button class="filtro-btn" data-categoria="medias">Bolsas Médias</button>
+                <button class="filtro-btn" data-categoria="grandes">Bolsas Grandes</button>
+            </div>
+            
+            <!-- Grid de Produtos -->
+            <div class="produtos-grid" id="produtos-grid">
+                <!-- Os produtos serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h2>Sobre Nós</h2>
+                    <p>Bem-vindos ao Leme Crochê! Somos apaixonados pela arte do crochê e dedicamos nosso tempo e carinho para criar bolsas únicas e especiais.</p>
+
+                    <p>Cada peça é feita à mão com fios de alta qualidade, garantindo durabilidade e beleza. Nossa missão é levar até você acessórios que combinem estilo, funcionalidade e a tradição artesanal brasileira.</p>
+
+                    <p>Acreditamos que cada bolsa conta uma história e carrega em si o amor e dedicação com que foi criada. Por isso, tratamos cada cliente como parte da nossa família.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p class="section-subtitle">Estamos aqui para tirar suas dúvidas e realizar seus pedidos</p>
+            
+            <div class="contato-content">
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p>@leme.croche</p>
+                            <a href="https://instagram.com/leme.croche" target="_blank" class="btn btn-instagram">
+                                <i class="fab fa-instagram"></i>
+                                Visitar Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Leme Crochê | Bolsas feitas à mão</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para detalhes do produto -->
+    <div id="produto-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modal-titulo"></h3>
+                    <p id="modal-categoria"></p>
+                    <p id="modal-preco"></p>
+                    <p id="modal-descricao"></p>
+                    <div class="modal-actions">
+                        <a href="#" id="modal-instagram" class="btn btn-instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            Entrar em Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

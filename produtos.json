@@ -1,0 +1,18 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Bolsa Malha Vazada",
+      "categoria": "medias",
+      "preco": "R$ 120,00",
+      "descricao": "Bolsa em crochê com padrão vazado elegante na parte superior e base sólida, com alças longas confortáveis. Ideal para o dia a dia.",
+      "cores": ["amarelo"],
+      "imagemBase": "bolsa01"
+    }
+  ],
+  "configuracao": {
+    "formatosImagem": ["jpg", "jpeg", "png", "webp"],
+    "pastaImagens": "images/",
+    "imagemPlaceholder": "images/placeholder.jpg"
+  }
+}
