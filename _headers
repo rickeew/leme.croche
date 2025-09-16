@@ -12,3 +12,9 @@
 
 /images/*.webp
   Content-Type: image/webp
+
+/images/*.svg
+  Content-Type: image/svg+xml
+
+/images/*.ico
+  Content-Type: image/x-icon

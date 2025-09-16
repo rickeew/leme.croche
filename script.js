@@ -75,7 +75,7 @@ async function carregarProdutos() {
     } catch (error) {
         console.error('Erro ao carregar produtos:', error);
 
-        // Fallback: retorna produtos de exemplo se houver erro
+        // Se houver erro, retorna array vazio
         return carregarProdutosFallback();
     }
 }
@@ -84,20 +84,8 @@ async function carregarProdutos() {
  * Produtos de fallback caso o JSON não carregue
  */
 function carregarProdutosFallback() {
-    console.warn('Usando produtos de fallback...');
-
-    return [
-        {
-            id: 1,
-            nome: "Bolsa Artesanal",
-            categoria: "medias",
-            preco: "R$ 65,00",
-            descricao: "Bolsa artesanal feita em crochê com muito carinho e dedicação.",
-            imagem: "images/bolsa01.png",
-            cores: ["Variadas"],
-            imagemEncontrada: true
-        }
-    ];
+    console.warn('JSON não encontrado - não exibindo produtos fallback');
+    return [];
 }
 
 // Configurações e variáveis globais
