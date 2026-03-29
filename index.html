@@ -7,7 +7,7 @@
     <meta name="description" content="Bolsas de crochê artesanais feitas com amor e cuidado. Modelos únicos e personalizados.">
     
     <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -126,7 +126,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Leme Crochê | Bolsas feitas à mão</p>
+                <p>&copy; <span id="ano"></span> Leme Crochê | Bolsas feitas à mão</p>
             </div>
         </div>
     </footer>
@@ -141,8 +141,8 @@
                 </div>
                 <div class="modal-info">
                     <h3 id="modal-titulo"></h3>
+                    <p id="modal-sku"></p>
                     <p id="modal-categoria"></p>
-                    <p id="modal-preco"></p>
                     <p id="modal-descricao"></p>
                     <div class="modal-actions">
                         <a href="#" id="modal-instagram" class="btn btn-instagram" target="_blank">

@@ -456,11 +456,12 @@ html {
     margin-bottom: var(--spacing-xs);
 }
 
-.produto-preco {
-    font-size: var(--font-size-md);
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
+.produto-sku {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-xs);
+    font-family: monospace;
 }
 
 .produto-descricao {

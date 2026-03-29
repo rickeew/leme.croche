@@ -2,17 +2,155 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "Bolsa Malha Vazada",
+      "sku": "LC-001",
+      "nome": "Bolsa Franjas Caramelo",
+      "categoria": "pequenas",
+      "descricao": "Bolsa crossbody em crochê com franjas elegantes e botão decorativo. Alça longa trançada, cor caramelo.",
+      "imagem": "images/LC-001.jpg"
+    },
+    {
+      "id": 2,
+      "sku": "LC-002",
+      "nome": "Bolsa Trançada Preta",
+      "categoria": "grandes",
+      "descricao": "Tote em crochê com textura trançada e detalhes em relevo. Alças curtas integradas, cor preta.",
+      "imagem": "images/LC-002.jpg"
+    },
+    {
+      "id": 3,
+      "sku": "LC-003",
+      "nome": "Bolsa Fecho Dourado Preta",
       "categoria": "medias",
-      "preco": "R$ 120,00",
-      "descricao": "Bolsa em crochê com padrão vazado elegante na parte superior e base sólida, com alças longas confortáveis. Ideal para o dia a dia.",
-      "cores": ["amarelo"],
-      "imagemBase": "bolsa01"
+      "descricao": "Bolsa crossbody em crochê com fecho dourado e alça de couro. Acabamento sofisticado, cor preta.",
+      "imagem": "images/LC-003.jpg"
+    },
+    {
+      "id": 4,
+      "sku": "LC-004",
+      "nome": "Bolsa Tassel Bordô",
+      "categoria": "medias",
+      "descricao": "Handbag em crochê com alça de acrílico marmorizado e tassel decorativo. Cor bordô.",
+      "imagem": "images/LC-004.jpg"
+    },
+    {
+      "id": 5,
+      "sku": "LC-005",
+      "nome": "Bolsa Tote Natural",
+      "categoria": "grandes",
+      "descricao": "Tote ampla em crochê com alças de couro em tom natural. Textura delicada, cor cru.",
+      "imagem": "images/LC-005.jpg"
+    },
+    {
+      "id": 6,
+      "sku": "LC-006",
+      "nome": "Bolsa Carteira Azul",
+      "categoria": "pequenas",
+      "descricao": "Bolsa crossbody retangular em crochê com aba e alça fina. Cor azul royal.",
+      "imagem": "images/LC-006.jpg"
+    },
+    {
+      "id": 7,
+      "sku": "LC-007",
+      "nome": "Bolsa Corrente Preta",
+      "categoria": "pequenas",
+      "descricao": "Bolsa estruturada em crochê com corrente dourada. Design compacto e elegante, cor preta.",
+      "imagem": "images/LC-007.jpg"
+    },
+    {
+      "id": 8,
+      "sku": "LC-008",
+      "nome": "Bolsa Bucket Bicolor",
+      "categoria": "pequenas",
+      "descricao": "Bucket bag em crochê bicolor com alça de couro. Fechamento com laço, marsala e preto.",
+      "imagem": "images/LC-008.jpg"
+    },
+    {
+      "id": 9,
+      "sku": "LC-010",
+      "nome": "Bolsa Hobo Preta",
+      "categoria": "grandes",
+      "descricao": "Hobo bag em crochê com alça integrada e formato orgânico. Design minimalista, cor preta.",
+      "imagem": "images/LC-010.jpg"
+    },
+    {
+      "id": 10,
+      "sku": "LC-011",
+      "nome": "Bolsa Pipoca Madeira",
+      "categoria": "medias",
+      "descricao": "Handbag em crochê com textura pipoca e alça de madeira redonda. Cor preta.",
+      "imagem": "images/LC-011.jpg"
+    },
+    {
+      "id": 11,
+      "sku": "LC-012",
+      "nome": "Bolsa Trapézio Marrom",
+      "categoria": "medias",
+      "descricao": "Handbag em crochê com alça de madeira trapezoidale. Textura firme, cor marrom.",
+      "imagem": "images/LC-012.jpg"
+    },
+    {
+      "id": 12,
+      "sku": "LC-013",
+      "nome": "Bolsa Clássica Cinza",
+      "categoria": "pequenas",
+      "descricao": "Bolsa crossbody estilo clássico com corrente dourada e fecho frontal. Cor cinza.",
+      "imagem": "images/LC-013.jpg"
+    },
+    {
+      "id": 13,
+      "sku": "LC-014",
+      "nome": "Bolsa Baú Marsala",
+      "categoria": "medias",
+      "descricao": "Handbag em crochê formato baú com alça trançada, corrente dourada e tassel. Cor marsala.",
+      "imagem": "images/LC-014.jpg"
+    },
+    {
+      "id": 14,
+      "sku": "LC-016",
+      "nome": "Bolsa Folhas Oliva",
+      "categoria": "grandes",
+      "descricao": "Tote em crochê com padrão de folhas em relevo. Textura artesanal elaborada, cor verde oliva.",
+      "imagem": "images/LC-016.jpg"
+    },
+    {
+      "id": 15,
+      "sku": "LC-017",
+      "nome": "Bolsa Tote Mostarda",
+      "categoria": "grandes",
+      "descricao": "Tote em crochê com padrão vazado e alças largas. Espaçosa e versátil, cor mostarda.",
+      "imagem": "images/LC-017.jpg"
+    },
+    {
+      "id": 16,
+      "sku": "LC-018",
+      "nome": "Bolsa Clutch Caramelo",
+      "categoria": "pequenas",
+      "descricao": "Clutch em crochê com aba e botão decorativo. Compacta e prática, cor caramelo.",
+      "imagem": "images/LC-018.jpg"
+    },
+    {
+      "id": 17,
+      "sku": "LC-019",
+      "nome": "Bolsa Saco Caramelo",
+      "categoria": "grandes",
+      "descricao": "Bucket bag em crochê com textura canelada e formato orgânico. Cor caramelo.",
+      "imagem": "images/LC-019.jpg"
+    },
+    {
+      "id": 18,
+      "sku": "LC-020",
+      "nome": "Bolsa Tote Coral",
+      "categoria": "grandes",
+      "descricao": "Tote em fio de malha com alças trançadas. Ampla e colorida, cor coral.",
+      "imagem": "images/LC-020.jpg"
+    },
+    {
+      "id": 19,
+      "sku": "LC-021",
+      "nome": "Bolsa Tote Laranja",
+      "categoria": "grandes",
+      "descricao": "Tote estruturada em crochê com alças duplas e argolas metálicas. Cor laranja.",
+      "imagem": "images/LC-021.jpg"
     }
-  ],
-  "configuracao": {
-    "formatosImagem": ["jpg", "jpeg", "png", "webp"],
-    "pastaImagens": "images/",
-    "imagemPlaceholder": "images/placeholder.jpg"
-  }
+  ]
 }
