@@ -523,6 +523,19 @@ html {
     display: block;
 }
 
+.produto-preco {
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    background: white;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    pointer-events: none;
+}
+
 /* Image placeholder fallback */
 .image-placeholder {
     width: 100%;
@@ -737,8 +750,22 @@ html {
     margin-bottom: var(--space-sm);
 }
 
+#modal-preco {
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
 .modal-actions {
     margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+#modal-whatsapp[hidden] {
+    display: none;
 }
 
 @keyframes fadeIn {
