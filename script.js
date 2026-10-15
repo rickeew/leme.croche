@@ -1,3 +1,5 @@
+const WHATSAPP_NUMERO = ''; // TODO: número no formato internacional só dígitos, ex. 5511999999999.
+
 // ==================== SISTEMA DINÂMICO DE PRODUTOS ====================
 
 // Configurações globais
@@ -5,6 +7,7 @@ const CONFIG = {
     urlProdutos: 'produtos.json',
     pastaImagens: 'images/'
 };
+const formatadorPreco = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
 // Dados dos produtos (carregados dinamicamente)
 let produtos = [];
@@ -90,6 +93,7 @@ function inicializarComponentes() {
     inicializarFiltros();
     inicializarFiltrosCor();
     inicializarModal();
+    abrirModalPeloHash();
 }
 
 // ==================== NAVEGAÇÃO ====================
@@ -293,6 +297,10 @@ function criarCardProduto(produto, index, isCarousel) {
     categoria.className = 'produto-categoria';
     categoria.textContent = formatarCategoria(produto.categoria);
 
+    const preco = document.createElement('p');
+    preco.className = 'produto-preco';
+    preco.textContent = formatadorPreco.format(produto.preco);
+
     const descricao = document.createElement('p');
     descricao.className = 'produto-descricao';
     descricao.textContent = produto.descricao.length > 80
@@ -302,6 +310,7 @@ function criarCardProduto(produto, index, isCarousel) {
     infoDiv.appendChild(nome);
     infoDiv.appendChild(sku);
     infoDiv.appendChild(categoria);
+    infoDiv.appendChild(preco);
     infoDiv.appendChild(descricao);
 
     // Overlay — nome + SKU + categoria + descrição sobre a imagem
@@ -328,6 +337,7 @@ function criarCardProduto(produto, index, isCarousel) {
     overlay.appendChild(overlayNome);
     overlay.appendChild(overlaySku);
     overlay.appendChild(overlayCat);
+    overlay.appendChild(preco.cloneNode(true));
     overlay.appendChild(overlayDesc);
 
     card.appendChild(imageDiv);
@@ -369,6 +379,7 @@ function formatarCategoria(categoria) {
 function inicializarModal() {
     modal = document.getElementById('produto-modal');
     const closeBtn = document.querySelector('.modal-close');
+    window.addEventListener('hashchange', abrirModalPeloHash);
 
     // Fechar modal
     closeBtn?.addEventListener('click', fecharModal);
@@ -388,6 +399,11 @@ function inicializarModal() {
     });
 }
 
+function abrirModalPeloHash() {
+    const produto = produtos.find(produto => `#${produto.sku}` === window.location.hash);
+    if (produto) abrirModal(produto);
+}
+
 function abrirModal(produto) {
     if (!modal) return;
 
@@ -395,6 +411,7 @@ function abrirModal(produto) {
     document.getElementById('modal-titulo').textContent = produto.nome;
     document.getElementById('modal-sku').textContent = produto.sku;
     document.getElementById('modal-categoria').textContent = formatarCategoria(produto.categoria);
+    document.getElementById('modal-preco').textContent = formatadorPreco.format(produto.preco);
     document.getElementById('modal-descricao').textContent = produto.descricao;
 
     // Configurar imagem
@@ -409,6 +426,23 @@ function abrirModal(produto) {
     // Link do Instagram Direct
     const instagramBtn = document.getElementById('modal-instagram');
     instagramBtn.href = `https://ig.me/m/leme.croche`;
+    document.getElementById('modal-cta-btn').textContent = 'Falar no Instagram';
+
+    const whatsappBtn = document.getElementById('modal-whatsapp');
+    whatsappBtn.hidden = !WHATSAPP_NUMERO;
+    if (WHATSAPP_NUMERO) {
+        const precoFormatadoSemPrefixo = formatadorPreco.formatToParts(produto.preco)
+            .filter(parte => parte.type !== 'currency' && parte.type !== 'literal')
+            .map(parte => parte.value).join('');
+        const mensagem = `Olá! Quero comprar a ${produto.nome} (${produto.sku}) de R$ ${precoFormatadoSemPrefixo}.`;
+        whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
+    } else {
+        whatsappBtn.removeAttribute('href');
+    }
+
+    if (window.location.hash !== `#${produto.sku}`) {
+        history.replaceState(history.state, '', `${window.location.pathname}${window.location.search}#${produto.sku}`);
+    }
 
     // Mostrar modal
     modal.classList.add('show');
@@ -420,6 +454,9 @@ function fecharModal() {
 
     modal.classList.remove('show');
     document.body.style.overflow = 'auto';
+    if (produtos.some(produto => `#${produto.sku}` === window.location.hash)) {
+        history.replaceState(history.state, '', window.location.pathname + window.location.search);
+    }
 }
 
 // ==================== ANIMAÇÕES ====================
