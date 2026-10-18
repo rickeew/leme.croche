@@ -12,4 +12,6 @@
 - Layouts de 320 px e 390 px sem rolagem horizontal. Menu móvel abriu o catálogo; filtro de porte ficou desativado para roupas. Vitrine e detalhes também inspecionados no viewport padrão de desktop.
 - Console sem avisos ou erros no fluxo normal inspecionado. O erro HTTP do teste de indisponibilidade foi provocado e não representa um arquivo faltante na versão final.
 
+- A integração existente publicou a prévia do commit `054179c` no Cloudflare Pages. Página inicial, catálogo, busca pela referência e diálogo da Bolsa Caramelo Franjas (R$ 170) foram verificados também no host, sem erros ou avisos de console no fluxo inspecionado.
+
 As capturas foram salvas no diretório local de trabalho, fora do código de produção. Não foi feita uma auditoria completa de acessibilidade, de dispositivos físicos ou da configuração de publicação do domínio. Preços e portes continuam estimados conforme `precificacao.md`.

@@ -32,7 +32,9 @@ Filtros e peças abertas têm URLs compartilháveis, por exemplo `catalogo.html?
 
 ## Publicação
 
-O repositório utiliza GitHub Pages a partir de `main`, conforme configuração descrita anteriormente. Alterações nesta branch só chegam ao site depois da integração e da publicação configurada no GitHub. `_headers` é preservado para hosts que suportam esse formato; GitHub Pages não aplica esse arquivo.
+O repositório tem integração com Cloudflare Pages, que gera prévias para branches e pull requests. A revisão fica em uma branch separada de `main`; a publicação no domínio depende da configuração de produção do host. O link da prévia aparece no comentário do Cloudflare no PR.
+
+`_headers` é preservado e aplicado pelo Cloudflare Pages. GitHub Pages, também habilitado no repositório, não aplica esse arquivo. Não há etapa de build obrigatória para servir estas páginas estáticas.
 
 ## Preços
 
