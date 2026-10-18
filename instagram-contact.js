@@ -3,7 +3,7 @@ import { money } from "./catalogo-core.js";
 export const INSTAGRAM_URL = "https://ig.me/m/leme.croche";
 
 export function productMessage(product) {
-  return `Olá! Gostei da ${product.nome} (${product.sku}), com preço de referência de ${money(product.preco)}. Pode me informar as medidas, a disponibilidade e o valor final?`;
+  return `Olá! Gostei desta peça: ${product.nome} (${product.sku}), com preço de referência de ${money(product.preco)}. Pode me informar as medidas, a disponibilidade e o valor final?`;
 }
 
 export async function copyAndOpenInstagram(product, { clipboard, openWindow }) {
