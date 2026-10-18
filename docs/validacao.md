@@ -15,3 +15,10 @@
 - A integração existente publicou a prévia do commit `054179c` no Cloudflare Pages. Página inicial, catálogo, busca pela referência e diálogo da Bolsa Caramelo Franjas (R$ 170) foram verificados também no host, sem erros ou avisos de console no fluxo inspecionado.
 
 As capturas foram salvas no diretório local de trabalho, fora do código de produção. Não foi feita uma auditoria completa de acessibilidade, de dispositivos físicos ou da configuração de publicação do domínio. Preços e portes continuam estimados conforme `precificacao.md`.
+
+## Botão único de contato — 18/10/2026
+
+- “Copiar mensagem e abrir Instagram” substitui as duas ações separadas nos detalhes. A mensagem inclui nome, referência e preço em reais; a cliente ainda precisa colar e enviar no Instagram.
+- `npm test`: 10 testes aprovados. Os quatro cenários adicionais cobrem conteúdo da mensagem, abertura da aba ainda no clique, navegação somente após a cópia e alternativas quando clipboard/aba são bloqueados.
+- No navegador, um clique confirmou sucesso da API de cópia e abriu o destino `instagram.com/m/leme.croche`. Na sessão de teste sem autenticação, o Instagram redirecionou para o login. Não foi feito login nem enviada mensagem.
+- A aba nova fica sem acesso à janela do catálogo antes de navegar ao Instagram. Se a cópia falhar, a aba vazia é fechada e a mensagem completa fica disponível para seleção manual no catálogo.

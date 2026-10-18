@@ -254,23 +254,35 @@
             Preço de referência. Confirme medidas, disponibilidade e valor final
             com a Leme antes de comprar.
           </p>
-          <button class="button" type="button" id="copy-reference">
-            1. Copiar referência da peça</button
-          ><a
-            class="button outline"
-            href="https://ig.me/m/leme.croche"
-            target="_blank"
-            rel="noopener noreferrer"
-            >2. Conversar pelo Instagram ↗</a
-          >
+          <button class="button" type="button" id="contact-instagram">
+            Copiar mensagem e abrir Instagram ↗
+          </button>
           <p
             id="copy-status"
             class="copy-status"
             role="status"
             aria-live="polite"
           ></p>
+          <div id="contact-fallback" hidden>
+            <label
+              id="manual-message-label"
+              class="manual-message-label"
+              hidden
+            >
+              Mensagem para copiar
+              <textarea id="manual-message" rows="4" readonly></textarea>
+            </label>
+            <a
+              class="button outline"
+              href="https://ig.me/m/leme.croche"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Abrir conversa no Instagram ↗</a
+            >
+          </div>
           <p class="detail-small">
-            Copie a referência e cole na conversa para identificar sua favorita.
+            O botão copia nome, código e preço da peça e abre a conversa. No
+            Instagram, toque em Colar. Você decide quando enviar.
           </p>
         </div>
       </div>

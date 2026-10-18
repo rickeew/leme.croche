@@ -28,7 +28,7 @@ Edite `produtos.json`. Preserve o `sku` de cada peça para não quebrar referên
 
 As referências `LEME-001` a `LEME-047` identificam as fotos selecionadas. As imagens antigas `LC-*` permanecem preservadas como ambientação da página inicial. Não foram criados produtos adicionais a partir dessas imagens, pois algumas diferem das fotos originais em cor ou construção. Cada registro mantém `original` para conferir a seleção do ZIP.
 
-Filtros e peças abertas têm URLs compartilháveis, por exemplo `catalogo.html?cor=preto` e `catalogo.html?peca=LEME-033`. Os caminhos relativos permitem servir o site na raiz ou em um subdiretório. Para vender, a cliente copia a referência e abre o Instagram; o site não envia mensagens nem processa pagamentos.
+Filtros e peças abertas têm URLs compartilháveis, por exemplo `catalogo.html?cor=preto` e `catalogo.html?peca=LEME-033`. Os caminhos relativos permitem servir o site na raiz ou em um subdiretório. O botão único de contato copia uma mensagem com nome, referência e preço e abre o Instagram em outra aba. A cliente toca em Colar no Instagram e decide quando enviar. Se a cópia ou a abertura da aba forem bloqueadas, o diálogo oferece uma alternativa manual. O site não envia mensagens nem processa pagamentos.
 
 ## Publicação
 

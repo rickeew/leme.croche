@@ -1,4 +1,5 @@
 import { filterProducts, money, labels } from "./catalogo-core.js";
+import { copyAndOpenInstagram } from "./instagram-contact.js";
 
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
@@ -156,6 +157,10 @@ function initCatalog() {
   function openProduct(p, button) {
     currentProduct = p;
     trigger = button || null;
+    document.querySelector("#contact-fallback").hidden = true;
+    document.querySelector("#manual-message-label").hidden = true;
+    document.querySelector("#manual-message").value = "";
+    document.querySelector("#contact-instagram").disabled = false;
     const photo = document.querySelector("#detail-image");
     photo.src = p.imagem;
     photo.alt = p.nome;
@@ -196,18 +201,35 @@ function initCatalog() {
     trigger?.focus();
   });
   document
-    .querySelector("#copy-reference")
+    .querySelector("#contact-instagram")
     .addEventListener("click", async () => {
       if (!currentProduct) return;
-      const p = currentProduct,
-        message = `Olá! Gostei da ${p.nome} (${p.sku}), com preço de referência de ${money(p.preco)}. Pode me informar as medidas, a disponibilidade e o valor final?`;
-      try {
-        await navigator.clipboard.writeText(message);
-        document.querySelector("#copy-status").textContent =
-          "Referência copiada! Cole na conversa do Instagram.";
-      } catch {
-        document.querySelector("#copy-status").textContent =
-          `Copie manualmente: ${p.sku} — ${p.nome}.`;
+      const p = currentProduct;
+      const button = document.querySelector("#contact-instagram");
+      button.disabled = true;
+      document.querySelector("#contact-fallback").hidden = true;
+      document.querySelector("#copy-status").textContent =
+        "Copiando a mensagem…";
+      const result = await copyAndOpenInstagram(p, {
+        clipboard: navigator.clipboard,
+        openWindow: () => window.open("about:blank", "_blank"),
+      });
+      if (currentProduct !== p) return;
+      button.disabled = false;
+      document.querySelector("#copy-status").textContent = result.copied
+        ? result.opened
+          ? "Mensagem copiada! No Instagram, toque em Colar e envie quando quiser."
+          : "Mensagem copiada! A nova aba não abriu. Use o link abaixo e toque em Colar no Instagram."
+        : "Não foi possível copiar automaticamente. Copie a mensagem abaixo e depois abra o Instagram.";
+      if (!result.opened) {
+        document.querySelector("#contact-fallback").hidden = false;
+        document.querySelector("#manual-message-label").hidden = result.copied;
+        document.querySelector("#manual-message").value = result.message;
+        if (!result.copied) {
+          const messageField = document.querySelector("#manual-message");
+          messageField.focus();
+          messageField.select();
+        }
       }
     });
   document.querySelectorAll("[data-type]").forEach((button) =>

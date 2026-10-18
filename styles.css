@@ -901,6 +901,32 @@ dialog::backdrop {
   margin-top: 10px;
   min-height: 19px;
 }
+.manual-message-label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.manual-message-label textarea {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font: 12px/1.6 var(--sans);
+  resize: vertical;
+}
+.manual-message-label textarea:focus-visible {
+  outline: 3px solid var(--wine);
+  outline-offset: 3px;
+}
+.detail-copy .button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
 .detail-small {
   font-size: 10px;
   color: var(--muted);
